@@ -1,0 +1,64 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.atakmap.android.networklistener.plugin"
+4    android:versionCode="1"
+5    android:versionName="1.0 () - [5.4.0]" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="31" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:5:5-67
+11-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:6:5-79
+12-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:6:22-76
+13
+14    <application
+14-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:8:5-35:19
+15        android:allowBackup="false"
+15-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:9:9-36
+16        android:debuggable="true"
+17        android:description="@string/app_desc"
+17-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:12:9-47
+18        android:extractNativeLibs="true"
+18-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:13:9-41
+19        android:icon="@drawable/ic_launcher"
+19-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:10:9-45
+20        android:label="@string/app_name"
+20-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:11:9-41
+21        android:theme="@style/AppTheme" >
+21-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:14:9-40
+22        <meta-data
+23            android:name="plugin-api"
+23-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:17:13-38
+24            android:value="com.atakmap.app@5.4.0.CIV" />
+24-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:18:13-46
+25        <meta-data
+25-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:20:9-22:48
+26            android:name="app_desc"
+26-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:21:13-36
+27            android:value="@string/app_desc" />
+27-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:22:13-45
+28
+29        <!-- Discovery entry for ATAK -->
+30        <activity
+30-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:25:9-32:20
+31            android:name="com.atakmap.app.component"
+31-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:26:13-53
+32            android:exported="true" >
+32-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:27:13-36
+33            <intent-filter android:label="@string/app_name" >
+33-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:29:13-31:29
+33-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:29:28-60
+34                <action android:name="com.atakmap.app.component" />
+34-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:30:17-68
+34-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:30:25-65
+35            </intent-filter>
+36        </activity>
+37
+38        <!-- No service required for Network Listener -->
+39    </application>
+40
+41</manifest>

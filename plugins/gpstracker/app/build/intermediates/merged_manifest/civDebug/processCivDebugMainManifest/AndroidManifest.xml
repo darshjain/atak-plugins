@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.atakmap.android.gpstracker.plugin"
+    android:versionCode="1"
+    android:versionName="1.0 () - [5.4.0]" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="31" />
+
+    <application
+        android:allowBackup="false"
+        android:debuggable="true"
+        android:description="@string/app_desc"
+        android:extractNativeLibs="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- Plugin API version -->
+        <meta-data
+            android:name="plugin-api"
+            android:value="com.atakmap.app@5.4.0.CIV" />
+        <meta-data
+            android:name="app_desc"
+            android:value="@string/app_desc" />
+
+        <!-- Required for ATAK to discover the plugin -->
+        <activity
+            android:name="com.atakmap.app.component"
+            android:exported="true" >
+            <intent-filter android:label="@string/app_name" >
+                <action android:name="com.atakmap.app.component" />
+            </intent-filter>
+        </activity>
+
+        <!-- Background Service for GPS Simulation -->
+        <service
+            android:name="com.atakmap.android.gpstracker.plugin.gpstracker.plugin.GpsSimulatorService"
+            android:enabled="true"
+            android:exported="false" />
+    </application>
+
+</manifest>

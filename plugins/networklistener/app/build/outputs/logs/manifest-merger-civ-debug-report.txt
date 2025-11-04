@@ -1,0 +1,77 @@
+-- Merging decision tree log ---
+meta-data#plugin-api
+INJECTED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:16:9-18:49
+	android:value
+		INJECTED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml
+		ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:18:13-46
+	android:name
+		ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:17:13-38
+manifest
+ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:1:1-37:12
+INJECTED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:1:1-37:12
+INJECTED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:1:1-37:12
+INJECTED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:1:1-37:12
+	package
+		INJECTED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:2:5-51
+	android:versionCode
+		INJECTED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:1:11-69
+	tools:ignore
+		ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:3:5-44
+uses-permission#android.permission.INTERNET
+ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:6:22-76
+application
+ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:8:5-35:19
+	android:extractNativeLibs
+		ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:13:9-41
+	android:label
+		ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:11:9-41
+	android:icon
+		ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:10:9-45
+	android:allowBackup
+		ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:9:9-36
+	android:description
+		ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:12:9-47
+	android:theme
+		ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:14:9-40
+meta-data#app_desc
+ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:20:9-22:48
+	android:value
+		ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:22:13-45
+	android:name
+		ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:21:13-36
+activity#com.atakmap.app.component
+ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:25:9-32:20
+	android:exported
+		ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:27:13-36
+	tools:ignore
+		ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:28:13-40
+	android:name
+		ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:26:13-53
+intent-filter#action:name:com.atakmap.app.component
+ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:29:13-31:29
+	android:label
+		ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:29:28-60
+action#com.atakmap.app.component
+ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:30:17-68
+	android:name
+		ADDED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml:30:25-65
+uses-sdk
+INJECTED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml
+INJECTED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/AndroidManifest.xml

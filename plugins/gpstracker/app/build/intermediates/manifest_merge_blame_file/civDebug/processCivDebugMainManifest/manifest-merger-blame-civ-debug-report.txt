@@ -1,0 +1,67 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.atakmap.android.gpstracker.plugin"
+4    android:versionCode="1"
+5    android:versionName="1.0 () - [5.4.0]" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="31" />
+10
+11    <application
+11-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:5:5-37:19
+12        android:allowBackup="false"
+12-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:6:9-36
+13        android:debuggable="true"
+14        android:description="@string/app_desc"
+14-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:9:9-47
+15        android:extractNativeLibs="true"
+15-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:10:9-41
+16        android:icon="@drawable/ic_launcher"
+16-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:7:9-45
+17        android:label="@string/app_name"
+17-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:8:9-41
+18        android:theme="@style/AppTheme" >
+18-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:11:9-40
+19
+20        <!-- Plugin API version -->
+21        <meta-data
+22            android:name="plugin-api"
+22-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:15:13-38
+23            android:value="com.atakmap.app@5.4.0.CIV" />
+23-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:16:13-46
+24        <meta-data
+24-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:18:9-20:48
+25            android:name="app_desc"
+25-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:19:13-36
+26            android:value="@string/app_desc" />
+26-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:20:13-45
+27
+28        <!-- Required for ATAK to discover the plugin -->
+29        <activity
+29-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:23:9-30:20
+30            android:name="com.atakmap.app.component"
+30-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:24:13-53
+31            android:exported="true" >
+31-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:25:13-36
+32            <intent-filter android:label="@string/app_name" >
+32-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:27:13-29:29
+32-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:27:28-60
+33                <action android:name="com.atakmap.app.component" />
+33-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:28:17-68
+33-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:28:25-65
+34            </intent-filter>
+35        </activity>
+36
+37        <!-- Background Service for GPS Simulation -->
+38        <service
+38-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:33:9-36:40
+39            android:name="com.atakmap.android.gpstracker.plugin.gpstracker.plugin.GpsSimulatorService"
+39-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:34:13-66
+40            android:enabled="true"
+40-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:35:13-35
+41            android:exported="false" />
+41-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/AndroidManifest.xml:36:13-37
+42    </application>
+43
+44</manifest>

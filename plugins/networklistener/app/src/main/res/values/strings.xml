@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">Network Listener</string>
+    <!-- description -->
+    <string name="app_desc">TCP/UDP/WebSocket network data listener with real-time telemetry visualization</string>
+
+
+
+
+</resources>
