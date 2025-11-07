@@ -20,7 +20,9 @@ import com.atakmap.coremap.cot.event.CotPoint;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Locale;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -49,6 +51,7 @@ public class CotViewerPlugin implements IPlugin {
 
     private ArrayAdapter<Row> adapter;
     private final ArrayList<Row> allRows = new ArrayList<>();
+    private final Set<String> manuallyTrackedUIDs = new HashSet<>();
 
     private final SimpleDateFormat fmt =
             new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US);
@@ -83,6 +86,10 @@ public class CotViewerPlugin implements IPlugin {
                         if (r == null) return;
 
                         pluginCtx.getMainExecutor().execute(() -> {
+                            // Check if this UID is manually tracked
+                            if (manuallyTrackedUIDs.contains(r.uid)) {
+                                r.manuallyTracked = true;
+                            }
                             allRows.add(0, r);
                             if (adapter != null) {
                                 applyFilter();
@@ -166,11 +173,32 @@ public class CotViewerPlugin implements IPlugin {
                     android.widget.TextView t2 = row.findViewById(android.R.id.text2);
                     t1.setText(r.titleLine());
                     t2.setText(r.detailLine());
-                    row.setBackgroundColor(r.tracked ? 0x22FF9800 : 0x00000000);
+                    // Different colors: auto-tracked (orange), manually tracked (blue), not tracked (transparent)
+                    if (r.manuallyTracked) {
+                        row.setBackgroundColor(0x332196F3); // Blue for manually tracked
+                    } else if (r.tracked) {
+                        row.setBackgroundColor(0x22FF9800); // Orange for auto-tracked
+                    } else {
+                        row.setBackgroundColor(0x00000000); // Transparent
+                    }
                     return row;
                 }
             };
             list.setAdapter(adapter);
+            
+            // Long press to toggle tracking
+            list.setOnItemLongClickListener((parent, view, position, id) -> {
+                Row r = adapter.getItem(position);
+                Log.d(TAG, "Long press detected on position: " + position);
+                if (r != null) {
+                    Log.d(TAG, "Showing tracking menu for: " + r.callsign + " (" + r.uid + ")");
+                    showTrackingMenu(r);
+                } else {
+                    Log.w(TAG, "Row is null at position: " + position);
+                }
+                return true;
+            });
+            
             onlyTracked.setOnCheckedChangeListener((b, checked) -> applyFilter());
 
             pane = new PaneBuilder(paneRoot)
@@ -193,13 +221,61 @@ public class CotViewerPlugin implements IPlugin {
         if (!filter) {
             adapter.addAll(allRows);
         } else {
-            for (Row r : allRows) if (r.tracked) adapter.add(r);
+            // Show both auto-tracked and manually tracked objects
+            for (Row r : allRows) {
+                if (r.tracked || r.manuallyTracked) {
+                    adapter.add(r);
+                }
+            }
         }
         adapter.notifyDataSetChanged();
     }
 
+    private void showTrackingMenu(Row row) {
+        try {
+            Log.d(TAG, "showTrackingMenu called for: " + row.callsign);
+            
+            // Create a simple confirmation using Toast and direct toggle
+            String callsign = (row.callsign == null || row.callsign.isEmpty()) ? "(no callsign)" : row.callsign;
+            
+            if (row.manuallyTracked) {
+                // Stop tracking
+                toggleTracking(row, false);
+                android.widget.Toast.makeText(pluginCtx, "Stopped tracking " + callsign, android.widget.Toast.LENGTH_SHORT).show();
+            } else {
+                // Start tracking
+                toggleTracking(row, true);
+                android.widget.Toast.makeText(pluginCtx, "Now tracking " + callsign, android.widget.Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Error in showTrackingMenu", e);
+        }
+    }
+
+    private void toggleTracking(Row row, boolean track) {
+        if (track) {
+            manuallyTrackedUIDs.add(row.uid);
+            row.manuallyTracked = true;
+            Log.d(TAG, "Started tracking: " + row.uid + " (" + row.callsign + ")");
+        } else {
+            manuallyTrackedUIDs.remove(row.uid);
+            row.manuallyTracked = false;
+            Log.d(TAG, "Stopped tracking: " + row.uid + " (" + row.callsign + ")");
+        }
+        
+        // Update all rows with the same UID
+        for (Row r : allRows) {
+            if (r.uid.equals(row.uid)) {
+                r.manuallyTracked = track;
+            }
+        }
+        
+        applyFilter();
+    }
+
     private Row from(CotEvent ev, String xml) {
         try {
+            String uid = "";
             String type = "";
             String callsign = "";
             long ms = System.currentTimeMillis();
@@ -207,6 +283,7 @@ public class CotViewerPlugin implements IPlugin {
             boolean tracked = false;
 
             if (ev != null) {
+                uid = safe(ev.getUID());
                 type = safe(ev.getType());
                 if (ev.getTime() != null) {
                     try { ms = ev.getTime().getMilliseconds(); } catch (Throwable ignore) { }
@@ -329,7 +406,7 @@ public class CotViewerPlugin implements IPlugin {
             }
 
             String ts = fmt.format(new Date(ms));
-            return new Row(type, callsign, ts, lat, lon, alt, tracked);
+            return new Row(uid, type, callsign, ts, lat, lon, alt, tracked);
         } catch (Throwable t) {
             return null;
         }
@@ -347,13 +424,16 @@ public class CotViewerPlugin implements IPlugin {
     private static String safe(String s) { return s == null ? "" : s; }
 
     private static class Row {
+        final String uid;
         final String type;
         final String callsign;
         final String ts;
         final double lat, lon, alt;
         final boolean tracked;
+        boolean manuallyTracked;
 
-        Row(String type, String callsign, String ts, double lat, double lon, double alt, boolean tracked) {
+        Row(String uid, String type, String callsign, String ts, double lat, double lon, double alt, boolean tracked) {
+            this.uid = uid;
             this.type = type;
             this.callsign = callsign;
             this.ts = ts;
@@ -361,6 +441,7 @@ public class CotViewerPlugin implements IPlugin {
             this.lon = lon;
             this.alt = alt;
             this.tracked = tracked;
+            this.manuallyTracked = false;
         }
 
         String titleLine() {
