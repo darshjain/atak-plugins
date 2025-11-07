@@ -54,10 +54,17 @@ public class CotViewerPlugin implements IPlugin {
             new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US);
 
     // loose callsign and "tracked" detection from XML text
-    private static final Pattern CALLSIGN_RE =
-            Pattern.compile("<contact[^>]*\\bcallsign\\s*=\\s*\"([^\"]+)\"", Pattern.CASE_INSENSITIVE);
+    // Try multiple common CoT formats: contact callsign attribute, contact name attribute, or nested <callsign> tag
+    private static final Pattern CALLSIGN_ATTR_RE =
+        Pattern.compile("<contact[^>]*\\bcallsign\\s*=\\s*\"([^\"]+)\"", Pattern.CASE_INSENSITIVE);
+    private static final Pattern CALLSIGN_NAME_RE =
+        Pattern.compile("<contact[^>]*\\bname\\s*=\\s*\"([^\"]+)\"", Pattern.CASE_INSENSITIVE);
+    // DOTALL + CASE_INSENSITIVE to allow newlines inside the tag and varied casing
+    private static final Pattern CALLSIGN_TAG_RE =
+        Pattern.compile("(?is)<callsign[^>]*>([^<]+)</callsign>");
+
     private static final Pattern TRACK_RE =
-            Pattern.compile("\\btrack\\b|\\btype=.*?track", Pattern.CASE_INSENSITIVE);
+        Pattern.compile("\\btrack\\b|\\btype=.*?track", Pattern.CASE_INSENSITIVE);
 
     private static final String TAG = "CotViewerPlugin";
     private static final String COT_EVENT_ACTION = "com.atakmap.android.cotviewer.COT_EVENT";
@@ -214,9 +221,18 @@ public class CotViewerPlugin implements IPlugin {
             }
 
             if (xml != null && !xml.isEmpty()) {
-                // callsign
-                Matcher m = CALLSIGN_RE.matcher(xml);
-                if (m.find()) callsign = m.group(1);
+                // callsign: try several common representations
+                Matcher m = CALLSIGN_ATTR_RE.matcher(xml);
+                if (m.find()) {
+                    callsign = m.group(1);
+                } else {
+                    m = CALLSIGN_NAME_RE.matcher(xml);
+                    if (m.find()) callsign = m.group(1);
+                    else {
+                        m = CALLSIGN_TAG_RE.matcher(xml);
+                        if (m.find()) callsign = m.group(1).trim();
+                    }
+                }
                 // basic track highlight heuristics
                 tracked = TRACK_RE.matcher(xml).find() || tracked;
                 // fallback for type
@@ -242,6 +258,74 @@ public class CotViewerPlugin implements IPlugin {
                         }
                     } catch (Throwable ignore) { }
                 }
+            }
+
+            // If callsign still empty, try to read it from the CotEvent detail structure
+            if ((callsign == null || callsign.isEmpty()) && ev != null) {
+                try {
+                    Object detail = null;
+                    try { detail = ev.getDetail(); } catch (Throwable ignore) { detail = null; }
+                    if (detail != null) {
+                        // Try common API shapes via reflection so we don't depend on exact SDK surface here.
+                        // 1) getChild(String name)
+                        try {
+                            java.lang.reflect.Method m = detail.getClass().getMethod("getChild", String.class);
+                            Object contact = m.invoke(detail, "contact");
+                            if (contact != null) {
+                                try {
+                                    java.lang.reflect.Method ga = contact.getClass().getMethod("getAttribute", String.class);
+                                    Object v = ga.invoke(contact, "callsign");
+                                    if (v != null) callsign = String.valueOf(v);
+                                } catch (NoSuchMethodException ns) { /* continue */ }
+                            }
+                        } catch (NoSuchMethodException ns) {
+                            // ignore
+                        }
+
+                        // 2) getChildren() -> iterate and look for name=="contact"
+                        if (callsign == null || callsign.isEmpty()) {
+                            try {
+                                java.lang.reflect.Method m2 = detail.getClass().getMethod("getChildren");
+                                Object kids = m2.invoke(detail);
+                                if (kids instanceof java.util.List) {
+                                    for (Object kid : (java.util.List) kids) {
+                                        if (kid == null) continue;
+                                        String kidName = null;
+                                        try {
+                                            java.lang.reflect.Method gn = kid.getClass().getMethod("getName");
+                                            Object kn = gn.invoke(kid);
+                                            if (kn != null) kidName = String.valueOf(kn);
+                                        } catch (NoSuchMethodException ns2) {
+                                            // try getTag
+                                            try {
+                                                java.lang.reflect.Method gt = kid.getClass().getMethod("getTag");
+                                                Object kn = gt.invoke(kid);
+                                                if (kn != null) kidName = String.valueOf(kn);
+                                            } catch (Throwable ignore) { }
+                                        }
+
+                                        if (kidName != null && kidName.equalsIgnoreCase("contact")) {
+                                            try {
+                                                java.lang.reflect.Method ga = kid.getClass().getMethod("getAttribute", String.class);
+                                                Object v = ga.invoke(kid, "callsign");
+                                                if (v != null && !String.valueOf(v).isEmpty()) {
+                                                    callsign = String.valueOf(v);
+                                                    break;
+                                                }
+                                                // try "name" attribute as fallback
+                                                v = ga.invoke(kid, "name");
+                                                if (v != null && !String.valueOf(v).isEmpty()) {
+                                                    callsign = String.valueOf(v);
+                                                    break;
+                                                }
+                                            } catch (NoSuchMethodException ns3) { /* continue */ }
+                                        }
+                                    }
+                                }
+                            } catch (NoSuchMethodException ns) { /* ignore */ }
+                        }
+                    }
+                } catch (Throwable ignore) { }
             }
 
             String ts = fmt.format(new Date(ms));

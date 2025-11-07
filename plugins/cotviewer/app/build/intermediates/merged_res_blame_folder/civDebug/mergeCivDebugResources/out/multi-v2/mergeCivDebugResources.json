@@ -4,24 +4,7 @@
             "outputFile": "com.atakmap.android.cotviewer.plugin.app-civDebug-5:/values_values.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/build/generated/res/resValues/civ/debug/values/gradleResValues.xml",
-                    "from": {
-                        "startLines": "6",
-                        "startColumns": "4",
-                        "startOffsets": "150",
-                        "endColumns": "77",
-                        "endOffsets": "223"
-                    },
-                    "to": {
-                        "startLines": "8",
-                        "startColumns": "4",
-                        "startOffsets": "370",
-                        "endColumns": "77",
-                        "endOffsets": "443"
-                    }
-                },
-                {
-                    "source": "/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/res/values/dimen.xml",
+                    "source": "/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/res/values/dimen.xml",
                     "from": {
                         "startLines": "17,4",
                         "startColumns": "4,4",
@@ -38,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/res/values/colors.xml",
-                    "from": {
-                        "startLines": "5,4",
-                        "startColumns": "4,4",
-                        "startOffsets": "120,80",
-                        "endColumns": "45,39",
-                        "endOffsets": "161,115"
-                    },
-                    "to": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,101",
-                        "endColumns": "45,39",
-                        "endOffsets": "96,136"
-                    }
-                },
-                {
-                    "source": "/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/res/values/strings.xml",
+                    "source": "/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/res/values/strings.xml",
                     "from": {
                         "startLines": "5,3",
                         "startColumns": "4,4",
@@ -72,7 +38,24 @@
                     }
                 },
                 {
-                    "source": "/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/res/values/styles.xml",
+                    "source": "/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/res/values/colors.xml",
+                    "from": {
+                        "startLines": "5,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "120,80",
+                        "endColumns": "45,39",
+                        "endOffsets": "161,115"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,101",
+                        "endColumns": "45,39",
+                        "endOffsets": "96,136"
+                    }
+                },
+                {
+                    "source": "/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "70,3,66,86,78,15,47,56,92,105,112,99",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
@@ -84,10 +67,27 @@
                     "to": {
                         "startLines": "9,16,26,29,32,39,53,56,64,69,72,83",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "448,625,1352,1490,1646,2019,2582,2665,3197,3473,3626,4214",
+                        "startOffsets": "456,633,1360,1498,1654,2027,2590,2673,3205,3481,3634,4222",
                         "endLines": "15,25,28,31,38,52,55,63,68,71,82,87",
                         "endColumns": "12,12,12,12,12,12,12,12,12,12,12,12",
-                        "endOffsets": "620,1347,1485,1641,2014,2577,2660,3192,3468,3621,4209,4460"
+                        "endOffsets": "628,1355,1493,1649,2022,2585,2668,3200,3476,3629,4217,4468"
+                    }
+                },
+                {
+                    "source": "/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/build/generated/res/resValues/civ/debug/values/gradleResValues.xml",
+                    "from": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "150",
+                        "endColumns": "85",
+                        "endOffsets": "231"
+                    },
+                    "to": {
+                        "startLines": "8",
+                        "startColumns": "4",
+                        "startOffsets": "370",
+                        "endColumns": "85",
+                        "endOffsets": "451"
                     }
                 }
             ]

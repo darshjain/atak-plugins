@@ -1,53 +1,53 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.atakmap.android.cotviewer.plugin"
-4    android:versionCode="1"
-5    android:versionName="1.0 () - [5.4.0]" >
+4    android:versionCode="1762357072"
+5    android:versionName="1.0 (448d0f74) - [5.4.0]" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
 9        android:targetSdkVersion="31" />
 10
 11    <application
-11-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/AndroidManifest.xml:5:5-32:19
+11-->/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/AndroidManifest.xml:5:5-32:19
 12        android:allowBackup="false"
-12-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/AndroidManifest.xml:6:9-36
+12-->/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/AndroidManifest.xml:6:9-36
 13        android:debuggable="true"
 14        android:description="@string/app_desc"
-14-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/AndroidManifest.xml:9:9-47
+14-->/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/AndroidManifest.xml:9:9-47
 15        android:extractNativeLibs="true"
-15-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/AndroidManifest.xml:10:9-41
+15-->/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/AndroidManifest.xml:10:9-41
 16        android:icon="@drawable/ic_launcher"
-16-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/AndroidManifest.xml:7:9-45
+16-->/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/AndroidManifest.xml:7:9-45
 17        android:label="@string/app_name"
-17-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/AndroidManifest.xml:8:9-41
+17-->/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/AndroidManifest.xml:8:9-41
 18        android:theme="@style/AppTheme" >
-18-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/AndroidManifest.xml:11:9-40
+18-->/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/AndroidManifest.xml:11:9-40
 19        <meta-data
 20            android:name="plugin-api"
-20-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/AndroidManifest.xml:14:13-38
+20-->/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/AndroidManifest.xml:14:13-38
 21            android:value="com.atakmap.app@5.4.0.CIV" />
-21-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/AndroidManifest.xml:15:13-46
+21-->/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/AndroidManifest.xml:15:13-46
 22        <meta-data
-22-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/AndroidManifest.xml:17:9-19:48
+22-->/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/AndroidManifest.xml:17:9-19:48
 23            android:name="app_desc"
-23-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/AndroidManifest.xml:18:13-36
+23-->/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/AndroidManifest.xml:18:13-36
 24            android:value="@string/app_desc" />
-24-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/AndroidManifest.xml:19:13-45
+24-->/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/AndroidManifest.xml:19:13-45
 25
 26        <!-- Discovery entry for ATAK -->
 27        <activity
-27-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/AndroidManifest.xml:22:9-29:20
+27-->/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/AndroidManifest.xml:22:9-29:20
 28            android:name="com.atakmap.app.component"
-28-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/AndroidManifest.xml:23:13-53
+28-->/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/AndroidManifest.xml:23:13-53
 29            android:exported="true" >
-29-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/AndroidManifest.xml:24:13-36
+29-->/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/AndroidManifest.xml:24:13-36
 30            <intent-filter android:label="@string/app_name" >
-30-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/AndroidManifest.xml:26:13-28:29
-30-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/AndroidManifest.xml:26:28-60
+30-->/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/AndroidManifest.xml:26:13-28:29
+30-->/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/AndroidManifest.xml:26:28-60
 31                <action android:name="com.atakmap.app.component" />
-31-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/AndroidManifest.xml:27:17-68
-31-->/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/cotviewer/app/src/main/AndroidManifest.xml:27:25-65
+31-->/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/AndroidManifest.xml:27:17-68
+31-->/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/cotviewer/app/src/main/AndroidManifest.xml:27:25-65
 32            </intent-filter>
 33        </activity>
 34
