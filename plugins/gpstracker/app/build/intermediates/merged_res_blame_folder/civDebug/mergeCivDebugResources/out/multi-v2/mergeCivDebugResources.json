@@ -4,24 +4,26 @@
             "outputFile": "com.atakmap.android.gpstracker.plugin.app-civDebug-5:/values_values.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/res/values/colors.xml",
+                    "source": "/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/gpstracker/app/src/main/res/values/styles.xml",
                     "from": {
-                        "startLines": "5,4",
-                        "startColumns": "4,4",
-                        "startOffsets": "120,80",
-                        "endColumns": "45,39",
-                        "endOffsets": "161,115"
+                        "startLines": "70,3,66,86,78,15,47,56,92,105,112,99",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3351,49,3212,4128,3753,778,2354,2678,4390,4920,5127,4668",
+                        "endLines": "76,12,68,88,84,40,53,63,96,107,122,103",
+                        "endColumns": "12,12,12,12,12,12,12,12,12,12,12,12",
+                        "endOffsets": "3747,771,3345,4279,4121,2178,2640,3205,4661,5068,5710,4914"
                     },
                     "to": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,101",
-                        "endColumns": "45,39",
-                        "endOffsets": "96,136"
+                        "startLines": "9,16,26,29,32,39,53,56,64,69,72,83",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "458,635,1362,1500,1656,2029,2592,2675,3207,3483,3636,4224",
+                        "endLines": "15,25,28,31,38,52,55,63,68,71,82,87",
+                        "endColumns": "12,12,12,12,12,12,12,12,12,12,12,12",
+                        "endOffsets": "630,1357,1495,1651,2024,2587,2670,3202,3478,3631,4219,4470"
                     }
                 },
                 {
-                    "source": "/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/res/values/dimen.xml",
+                    "source": "/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/gpstracker/app/src/main/res/values/dimen.xml",
                     "from": {
                         "startLines": "17,4",
                         "startColumns": "4,4",
@@ -38,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/res/values/strings.xml",
+                    "source": "/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/gpstracker/app/src/main/res/values/strings.xml",
                     "from": {
                         "startLines": "5,3",
                         "startColumns": "4,4",
@@ -55,39 +57,37 @@
                     }
                 },
                 {
-                    "source": "/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/src/main/res/values/styles.xml",
+                    "source": "/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/gpstracker/app/src/main/res/values/colors.xml",
                     "from": {
-                        "startLines": "70,3,66,86,78,15,47,56,92,105,112,99",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3351,49,3212,4128,3753,778,2354,2678,4390,4920,5127,4668",
-                        "endLines": "76,12,68,88,84,40,53,63,96,107,122,103",
-                        "endColumns": "12,12,12,12,12,12,12,12,12,12,12,12",
-                        "endOffsets": "3747,771,3345,4279,4121,2178,2640,3205,4661,5068,5710,4914"
+                        "startLines": "5,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "120,80",
+                        "endColumns": "45,39",
+                        "endOffsets": "161,115"
                     },
                     "to": {
-                        "startLines": "9,16,26,29,32,39,53,56,64,69,72,83",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "450,627,1354,1492,1648,2021,2584,2667,3199,3475,3628,4216",
-                        "endLines": "15,25,28,31,38,52,55,63,68,71,82,87",
-                        "endColumns": "12,12,12,12,12,12,12,12,12,12,12,12",
-                        "endOffsets": "622,1349,1487,1643,2016,2579,2662,3194,3470,3623,4211,4462"
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,101",
+                        "endColumns": "45,39",
+                        "endOffsets": "96,136"
                     }
                 },
                 {
-                    "source": "/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/gpstracker/app/build/generated/res/resValues/civ/debug/values/gradleResValues.xml",
+                    "source": "/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/gpstracker/app/build/generated/res/resValues/civ/debug/values/gradleResValues.xml",
                     "from": {
                         "startLines": "6",
                         "startColumns": "4",
                         "startOffsets": "150",
-                        "endColumns": "77",
-                        "endOffsets": "223"
+                        "endColumns": "85",
+                        "endOffsets": "231"
                     },
                     "to": {
                         "startLines": "8",
                         "startColumns": "4",
                         "startOffsets": "372",
-                        "endColumns": "77",
-                        "endOffsets": "445"
+                        "endColumns": "85",
+                        "endOffsets": "453"
                     }
                 }
             ]

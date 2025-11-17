@@ -28,6 +28,9 @@ public class GpsSimulatorService {
     private double angleRad = 0.0;
     private final double radiusDeg = 0.0005;
     private final double velocityMs = 5.0;
+    
+    private double originLat;
+    private double originLon;
 
     public GpsSimulatorService(MapView mv) {
         this.mapView = mv;
@@ -36,6 +39,10 @@ public class GpsSimulatorService {
     public void startSimulation() {
         if (running) return;
         running = true;
+        GeoPoint c = mapView.getCenterPoint().get();
+        originLat = c.getLatitude();
+        originLon = c.getLongitude() + radiusDeg * 2; // shift east so SimBot is not at screen center
+        angleRad = 0.0;
         handler.post(tick);
     }
 
@@ -43,16 +50,21 @@ public class GpsSimulatorService {
         running = false;
         handler.removeCallbacksAndMessages(null);
 
-        long now = System.currentTimeMillis();
-        CotEvent clear = buildEvent(0, 0, 0, new CoordinatedTime(now - 1000));
-        CotMapComponent.getInstance().getInternalDispatcher().dispatch(clear);
+        // Directly remove the marker from the map
+        try {
+            com.atakmap.android.maps.MapItem item = mapView.getRootGroup().deepFindUID(UID);
+            if (item != null) {
+                item.removeFromGroup();
+            }
+        } catch (Exception e) {
+            // Marker not found or already removed
+        }
     }
 
     private final Runnable tick = new Runnable() {
         @Override public void run() {
-            GeoPoint c = mapView.getCenterPoint().get();
-            double lat = c.getLatitude()  + radiusDeg * Math.cos(angleRad);
-            double lon = c.getLongitude() + radiusDeg * Math.sin(angleRad);
+            double lat = originLat + radiusDeg * Math.cos(angleRad);
+            double lon = originLon + radiusDeg * Math.sin(angleRad);
             angleRad += Math.toRadians(10);
 
             CotEvent ev = buildEvent(lat, lon, 0, null);

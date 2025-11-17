@@ -6,7 +6,7 @@
     <dimen name="fontSize">14sp</dimen>
     <string name="app_desc">TCP/UDP/WebSocket network data listener with real-time telemetry visualization</string>
     <string name="app_name">Network Listener</string>
-    <string name="versionName" translatable="false">1.0 () - [5.4.0]</string>
+    <string name="versionName" translatable="false">1.0 (cc085314) - [5.4.0]</string>
     <style name="ATAKEditText" parent="@android:style/Widget.EditText">
         
         

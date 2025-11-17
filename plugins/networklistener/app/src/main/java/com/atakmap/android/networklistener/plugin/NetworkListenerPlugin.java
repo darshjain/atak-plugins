@@ -66,6 +66,9 @@ public class NetworkListenerPlugin implements IPlugin {
     private ExecutorService executorService;
     private volatile boolean isRunning = false;
     
+    private ServerSocket tcpServerSocket;
+    private DatagramSocket udpSocket;
+    
     private Marker telemetryMarker;
     private TextView statusText;
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
@@ -154,22 +157,32 @@ public class NetworkListenerPlugin implements IPlugin {
         
         executorService.submit(() -> {
             try {
-                ServerSocket serverSocket = new ServerSocket(TCP_PORT);
+                tcpServerSocket = new ServerSocket(TCP_PORT);
                 updateStatus("TCP Server listening on port " + TCP_PORT);
                 addLog("TCP Server started on port " + TCP_PORT);
 
-                while (isRunning) {
-                    Socket clientSocket = serverSocket.accept();
+                while (isRunning && !tcpServerSocket.isClosed()) {
+                    Socket clientSocket = tcpServerSocket.accept();
                     addLog("TCP Client connected: " + clientSocket.getInetAddress());
                     
                     handleTcpClient(clientSocket);
                 }
-                
-                serverSocket.close();
             } catch (Exception e) {
+                if (!isRunning) {
+                    // Likely closed due to stopServers(); ignore
+                    return;
+                }
                 Log.e(TAG, "TCP Server error", e);
                 addLog("TCP Error: " + e.getMessage());
                 updateStatus("TCP Error");
+            } finally {
+                if (tcpServerSocket != null && !tcpServerSocket.isClosed()) {
+                    try {
+                        tcpServerSocket.close();
+                    } catch (Exception ignore) { }
+                }
+                tcpServerSocket = null;
+                isRunning = false;
             }
         });
     }
@@ -203,25 +216,35 @@ public class NetworkListenerPlugin implements IPlugin {
         
         executorService.submit(() -> {
             try {
-                DatagramSocket socket = new DatagramSocket(UDP_PORT);
+                udpSocket = new DatagramSocket(UDP_PORT);
                 updateStatus("UDP Server listening on port " + UDP_PORT);
                 addLog("UDP Server started on port " + UDP_PORT);
 
                 byte[] buffer = new byte[1024];
                 
-                while (isRunning) {
+                while (isRunning && !udpSocket.isClosed()) {
                     DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
-                    socket.receive(packet);
+                    udpSocket.receive(packet);
                     
                     String data = new String(packet.getData(), 0, packet.getLength());
                     processData(data, "UDP");
                 }
-                
-                socket.close();
             } catch (Exception e) {
+                if (!isRunning) {
+                    // Likely closed due to stopServers(); ignore
+                    return;
+                }
                 Log.e(TAG, "UDP Server error", e);
                 addLog("UDP Error: " + e.getMessage());
                 updateStatus("UDP Error");
+            } finally {
+                if (udpSocket != null && !udpSocket.isClosed()) {
+                    try {
+                        udpSocket.close();
+                    } catch (Exception ignore) { }
+                }
+                udpSocket = null;
+                isRunning = false;
             }
         });
     }
@@ -276,6 +299,27 @@ public class NetworkListenerPlugin implements IPlugin {
 
     private void stopServers() {
         isRunning = false;
+        
+        if (tcpServerSocket != null) {
+            try {
+                tcpServerSocket.close();
+            } catch (Exception e) {
+                Log.e(TAG, "Error closing TCP server socket", e);
+            } finally {
+                tcpServerSocket = null;
+            }
+        }
+
+        if (udpSocket != null) {
+            try {
+                udpSocket.close();
+            } catch (Exception e) {
+                Log.e(TAG, "Error closing UDP socket", e);
+            } finally {
+                udpSocket = null;
+            }
+        }
+
         if (executorService != null) {
             executorService.shutdownNow();
             executorService = null;

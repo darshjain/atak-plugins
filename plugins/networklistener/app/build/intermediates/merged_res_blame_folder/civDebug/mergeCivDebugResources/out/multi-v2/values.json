@@ -4,24 +4,24 @@
             "outputFile": "com.atakmap.android.networklistener.plugin.app-mergeCivDebugResources-3:/values/values.xml",
             "map": [
                 {
-                    "source": "/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/build/generated/res/resValues/civ/debug/values/gradleResValues.xml",
+                    "source": "/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/networklistener/app/build/generated/res/resValues/civ/debug/values/gradleResValues.xml",
                     "from": {
                         "startLines": "6",
                         "startColumns": "4",
                         "startOffsets": "150",
-                        "endColumns": "77",
-                        "endOffsets": "223"
+                        "endColumns": "85",
+                        "endOffsets": "231"
                     },
                     "to": {
                         "startLines": "8",
                         "startColumns": "4",
                         "startOffsets": "393",
-                        "endColumns": "77",
-                        "endOffsets": "466"
+                        "endColumns": "85",
+                        "endOffsets": "474"
                     }
                 },
                 {
-                    "source": "/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/res/values/colors.xml",
+                    "source": "/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/networklistener/app/src/main/res/values/colors.xml",
                     "from": {
                         "startLines": "5,4",
                         "startColumns": "4,4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/res/values/styles.xml",
+                    "source": "/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/networklistener/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "70,3,66,86,78,15,47,56,92,105,112,99",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
@@ -50,31 +50,14 @@
                     "to": {
                         "startLines": "9,16,26,29,32,39,53,56,64,69,72,83",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "471,648,1375,1513,1669,2042,2605,2688,3220,3496,3649,4237",
+                        "startOffsets": "479,656,1383,1521,1677,2050,2613,2696,3228,3504,3657,4245",
                         "endLines": "15,25,28,31,38,52,55,63,68,71,82,87",
                         "endColumns": "12,12,12,12,12,12,12,12,12,12,12,12",
-                        "endOffsets": "643,1370,1508,1664,2037,2600,2683,3215,3491,3644,4232,4483"
+                        "endOffsets": "651,1378,1516,1672,2045,2608,2691,3223,3499,3652,4240,4491"
                     }
                 },
                 {
-                    "source": "/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/res/values/strings.xml",
-                    "from": {
-                        "startLines": "5,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "151,72",
-                        "endColumns": "115,53",
-                        "endOffsets": "262,121"
-                    },
-                    "to": {
-                        "startLines": "6,7",
-                        "startColumns": "4,4",
-                        "startOffsets": "223,339",
-                        "endColumns": "115,53",
-                        "endOffsets": "334,388"
-                    }
-                },
-                {
-                    "source": "/Users/darshjain/Downloads/ATAK-CIV-5.4.0.27-SDK/samples/networklistener/app/src/main/res/values/dimen.xml",
+                    "source": "/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/networklistener/app/src/main/res/values/dimen.xml",
                     "from": {
                         "startLines": "17,4",
                         "startColumns": "4,4",
@@ -88,6 +71,23 @@
                         "startOffsets": "141,183",
                         "endColumns": "41,39",
                         "endOffsets": "178,218"
+                    }
+                },
+                {
+                    "source": "/Users/darshjain/Desktop/Workspace/atak-plugins/plugins/networklistener/app/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "5,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "151,72",
+                        "endColumns": "115,53",
+                        "endOffsets": "262,121"
+                    },
+                    "to": {
+                        "startLines": "6,7",
+                        "startColumns": "4,4",
+                        "startOffsets": "223,339",
+                        "endColumns": "115,53",
+                        "endOffsets": "334,388"
                     }
                 }
             ]

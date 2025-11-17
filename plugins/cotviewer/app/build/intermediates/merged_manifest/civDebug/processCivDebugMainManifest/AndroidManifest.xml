@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.atakmap.android.cotviewer.plugin"
-    android:versionCode="1762494426"
-    android:versionName="1.0 (95956150) - [5.4.0]" >
+    android:versionCode="1762495126"
+    android:versionName="1.0 (cc085314) - [5.4.0]" >
 
     <uses-sdk
         android:minSdkVersion="21"

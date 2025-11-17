@@ -6,7 +6,7 @@
     <dimen name="fontSize">14sp</dimen>
     <string name="app_desc">This plugin demonstrates various APIs for the ATAK COT Viewer</string>
     <string name="app_name">COT Viewer</string>
-    <string name="versionName" translatable="false">1.0 (95956150) - [5.4.0]</string>
+    <string name="versionName" translatable="false">1.0 (cc085314) - [5.4.0]</string>
     <style name="ATAKEditText" parent="@android:style/Widget.EditText">
         
         
