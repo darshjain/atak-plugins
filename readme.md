@@ -26,14 +26,13 @@ Table of Contents
 - [Integration Testing](#integration-testing)
 - [Project Structure](#project-structure)
 - [Key Features](#key-features)
-- [Contributors & Support](#contributors--support)
 
 Quick Start
 -----------
 For end users who want to install and use the plugins immediately:
 
 1. Copy the `finalAPKs/` folder to your Android device
-2. Install ATAK APK (add to `finalAPKs/` folder if not present)
+2. Install ATAK APK (`Atak.apk`)
 3. Install all three plugin APKs
 4. Open ATAK → Settings → Plugin Management → Enable plugins
 5. Use plugin buttons in the toolbar
@@ -79,8 +78,8 @@ adb devices
 
 1. **Prepare the APKs:**
    - All APK files are located in the `finalAPKs/` folder
-   - You need: ATAK APK + 3 plugin APKs (cotviewer, gpstracker, networklistener)
-   - **Note:** Place your ATAK APK in the `finalAPKs/` folder if not already there
+   - You need: `Atak.apk` + 3 plugin APKs (cotviewer, gpstracker, networklistener)
+   - All files are included and ready to install
 
 2. **Transfer APKs to your Android device:**
    - Connect your phone to your computer via USB
@@ -96,7 +95,7 @@ adb devices
 4. **Install ATAK first:**
    - Open your **Files** app or **Downloads** folder
    - Navigate to the `finalAPKs/` folder
-   - Tap on the **ATAK APK** file
+   - Tap on **Atak.apk**
    - Tap **Install**
    - Wait for installation to complete
    - Open ATAK to verify it works
@@ -123,7 +122,7 @@ If you prefer using ADB from your computer:
 #### Step 1: Install ATAK
 
 ```bash
-adb install -r finalAPKs/ATAK-*.apk
+adb install -r finalAPKs/Atak.apk
 ```
 
 Launch ATAK on your device to ensure it's working properly before installing plugins.
@@ -366,10 +365,8 @@ Project Structure
   - `gpstracker/` – GPS simulation with circular motion
   - `networklistener/` – TCP/UDP telemetry receiver
 - `finalAPKs/` – Pre-built APK files for easy installation
-  - Contains all three plugin APKs ready to install
-  - Add your ATAK APK here for complete distribution
-- `docs/` – Documentation and references
-- `license/` – Licensing information
+  - Contains ATAK APK (`Atak.apk`) and all three plugin APKs
+  - Ready for distribution and installation
 
 Key Features
 ------------
