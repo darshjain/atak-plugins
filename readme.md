@@ -15,6 +15,7 @@ Table of Contents
 -----------------
 - [Quick Start](#quick-start)
 - [Requirements](#requirements)
+- [Tech Stack](#tech-stack)
 - [Installation](#installation)
   - [Manual Installation](#manual-installation-physical-android-device)
   - [ADB Installation](#adb-installation-developer-method)
@@ -44,6 +45,35 @@ Requirements
 - Android Studio (compatible with the ATAK SDK version used here)
 - Gradle (wrapper included)
 - ATAK SDK and dependencies per `README_atak_SDK.md`
+
+Tech Stack
+----------
+
+**Languages:**
+- Java
+- XML
+- Gradle
+
+**Platform:**
+- ATAK SDK 5.4.0
+- Android SDK
+- Gradle 8.13
+
+**Key Libraries:**
+- ATAK APIs (IPlugin, MapView, CotEvent, UI components)
+- Android networking (ServerSocket, DatagramSocket)
+- Android UI widgets
+
+**Tools:**
+- Android Studio
+- ADB (Android Debug Bridge)
+- Git
+- Bluestacks
+
+**Networking:**
+- TCP (port 8888)
+- UDP (port 9999)
+- JSON data format
 
 Getting Started
 ---------------
